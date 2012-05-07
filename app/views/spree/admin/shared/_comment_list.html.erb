@@ -4,6 +4,7 @@
     <% if @comment_types and !@comment_types.empty? %>
       <th><%= t(:type) %></th>
     <% end %>
+    <th>Emailed</th>
     <th><%= t(:comment) %></th>
   </tr>
   <% commentable.comments.reverse.each_with_index do |comment, index| %>
@@ -12,6 +13,7 @@
       <% if @comment_types and !@comment_types.empty? %>
         <td><%= comment.comment_type.name if comment.comment_type %></td>
       <% end %>
+      <td><%= comment.mailed? ? 'Yes' : "No" %></td>
       <td>
         <div id="order-comment-header-<%= index %>" class="order-comment-header">
           <strong><%= comment.user.email + ' ' + t(:said)%> :</strong>

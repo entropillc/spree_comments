@@ -20,6 +20,10 @@
           </tr>
         <% end %>
         <tr>
+          <td style="width:140px;"><%= f.label :comment, 'Send Email' %></td>
+          <td><%= f.check_box("mailed", {}, "true", "false")%></td>
+        </tr>
+        <tr>
           <td style="width:140px;"><%= f.label :comment, t(:comment) %></td>
           <td><%= f.text_area :comment,  {:style => 'height:150px;', :class => 'fullwidth'} %></td>
         </tr>
