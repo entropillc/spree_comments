@@ -16,7 +16,7 @@
       <td><%= comment.mailed? ? 'Yes' : "No" %></td>
       <td>
         <div id="order-comment-header-<%= index %>" class="order-comment-header">
-          <strong><%= (comment.user ? comment.user.email : "Said:") + ' ' + t(:said)%> :</strong>
+          <strong><%= (comment.user ? comment.user.email : "") + ' ' + t(:said)%> :</strong>
         </div>
         <div id="order-comment-body-<%= index %>" class="order-comment-body">
           <%= comment.comment.html_safe %>
